@@ -1,4 +1,4 @@
-window.ASLPlayer = {
+module.exports = {
 	// Create a new ASL player
 	create: function (file, callback) {
 		callback ();
