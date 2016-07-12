@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-		id="asl-player" version="0.4.0">
+		id="asl-player" version="0.4.2">
 	<name>ASL Player</name>
+	<author>jbroadway</author>
 	<description>A sign language video player that embeds into the corner of your screen, allowing for simultaneous playback with another video.</description>
 	<license>MIT</license>
 	<keywords>asl,lsq,video,player,accessibility,sign,language</keywords>
@@ -10,6 +11,7 @@
 		<js-module src="www/aslplayer.js" name="ASLPlayer">
 			<clobbers target="window.ASLPlayer" />
 		</js-module>
+
 		<config-file target="config.xml" parent="/*">
 			<feature name="ASLPlayer">
 				<param name="ios-package" value="ASLPlayer" />
