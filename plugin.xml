@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-		id="asl-player" version="0.4.2">
+		id="asl-player" version="0.4.4">
 	<name>ASL Player</name>
 	<author>jbroadway</author>
 	<description>A sign language video player that embeds into the corner of your screen, allowing for simultaneous playback with another video.</description>
