@@ -1,0 +1,34 @@
+{
+  "name": "asl-player",
+  "version": "0.2.0",
+  "description": "A sign language video player that embeds into the corner of your screen, allowing for simultaneous playback with another video.",
+  "cordova": {
+    "id": "asl-player",
+    "platforms": [
+      "ios",
+      "browser"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbroadway/asl-player.git"
+  },
+  "keywords": [
+    "asl",
+    "lsq",
+    "video",
+    "player",
+    "accessibility",
+    "sign",
+    "language",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-browser"
+  ],
+  "author": "Johnny Broadway",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbroadway/asl-player/issues"
+  },
+  "homepage": "https://github.com/jbroadway/asl-player#readme"
+}
