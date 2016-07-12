@@ -7,7 +7,7 @@
  * Interface of the ASLPlayer Cordova plugin.
  */
 @interface ASLPlayer : CDVPlugin {
-    IBOutlet ASLPlayerViewController *controller;
+	IBOutlet ASLPlayerViewController *controller;
 }
 
 @property (nonatomic, retain) IBOutlet ASLPlayerViewController *controller;

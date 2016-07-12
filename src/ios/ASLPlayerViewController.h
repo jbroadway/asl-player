@@ -9,7 +9,7 @@
  * down to AVPlayer.
  */
 @interface ASLPlayerViewController : UIViewController {
-    AVPlayer* player;
+	AVPlayer* player;
 	AVPlayerLayer* playerLayer;
 }
 
@@ -21,6 +21,6 @@
 - (void)setFile:(NSString*)file;
 - (void)play;
 - (void)pause;
-- (void)seekToDate:(NSDate*)date;
+- (void)seekToTime:(CMTime)date;
 
 @end

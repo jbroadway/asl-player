@@ -17,7 +17,7 @@ static void *ASLPlayerPlaybackViewControllerStatusObservationContext = &ASLPlaye
  * Creates a new AVPlayer with the given file to play.
  */
 - (void)setFile:(NSString *)file {
-    NSLog(@"ASLPlayerViewController.setFile(%@)", file);
+	NSLog(@"ASLPlayerViewController.setFile(%@)", file);
 
 	// Build URL to file
 	NSString *filePath = [NSString stringWithFormat:@"www/%@", file];
@@ -41,46 +41,46 @@ static void *ASLPlayerPlaybackViewControllerStatusObservationContext = &ASLPlaye
 	
 	self.view.userInteractionEnabled = NO;
 	
-    // Observe changes to AVPlayer status
-    [self.player addObserver:self forKeyPath:@"status" options:0 context:ASLPlayerPlaybackViewControllerStatusObservationContext];
+	// Observe changes to AVPlayer status
+	[self.player addObserver:self forKeyPath:@"status" options:0 context:ASLPlayerPlaybackViewControllerStatusObservationContext];
 }
 
 /**
  * Observes changes to the AVPlayer status.
  */
 - (void)observeValueForKeyPath:(NSString *)path ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if (player.status == AVPlayerStatusReadyToPlay) {
-        NSLog(@"- Observed status change");
+	if (player.status == AVPlayerStatusReadyToPlay) {
+		NSLog(@"- Observed status change");
 
 		//self.playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    }
+	}
 }
 
 /**
  * Plays the currently loaded AVPlayer video.
  */
 - (void)play {
-    NSLog(@"ASLPlayerViewController.play()");
+	NSLog(@"ASLPlayerViewController.play()");
 
-    [self.player play];
+	[self.player play];
 }
 
 /**
  * Pauses the currently loaded AVPlayer video.
  */
 - (void)pause {
-    NSLog(@"ASLPlayerViewController.play()");
+	NSLog(@"ASLPlayerViewController.play()");
 	
-    [self.player pause];
+	[self.player pause];
 }
 
 /**
  * Seeks to the specified seek time of the currently loaded AVPlayer video.
  */
-- (void)seekToDate:(NSDate *)date {
-    NSLog(@"ASLPlayerViewController.seekToDate(%@)", date);
-    
-    [self.player seekToDate:date];
+- (void)seekToTime:(CMTime)time {
+	NSLog(@"ASLPlayerViewController.seekToDate(%f)", CMTimeGetSeconds(time));
+	
+	[self.player seekToTime: time];
 }
 
 @end
