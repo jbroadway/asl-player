@@ -83,4 +83,13 @@ static void *ASLPlayerPlaybackViewControllerStatusObservationContext = &ASLPlaye
 	[self.player seekToTime: time];
 }
 
+/**
+ * Remove the player from the scene.
+ */
+- (void)remove {
+	NSLog(@"ASLPlayerViewController.remove()");
+	
+	self.player = nil;
+}
+
 @end

@@ -29,7 +29,8 @@
 	CGFloat right = CGRectGetMaxX(self.viewController.view.frame);
 	CGRect frame = CGRectMake(right - 220, bottom - 235, 220, 235);
 	self.controller.view.frame = frame;
-
+	
+	[self.controller.view setHidden:NO];
 	[self.viewController.view addSubview:controller.view];
 	[self.controller didMoveToParentViewController:self.viewController];
 	
@@ -46,8 +47,6 @@
 	CDVPluginResult* pluginResult = nil;
 	
 	NSLog(@"ASLPlayer.play()");
-	
-	[self.viewController.view setHidden:NO];
 	
 	[self.controller play];
 	
@@ -97,8 +96,8 @@
 		[self.controller pause];
 	}
 	
-	[self.viewController.view setHidden:YES];
-	[self.viewController.view removeFromSuperview];
+	[self.controller remove];
+	[self.controller.view setHidden:YES];
 	
 	pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
 	[self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];

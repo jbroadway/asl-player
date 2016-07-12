@@ -22,5 +22,6 @@
 - (void)play;
 - (void)pause;
 - (void)seekToTime:(CMTime)date;
+- (void)remove;
 
 @end
