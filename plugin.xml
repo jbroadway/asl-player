@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="asl-player" version="0.3.0">
-    <name>ASL Player</name>
-    <description>A sign language video player that embeds into the corner of your screen, allowing for simultaneous playback with another video.</description>
-    <license>MIT</license>
-    <keywords>asl,lsq,video,player,accessibility,sign,language</keywords>
+		id="asl-player" version="0.4.0">
+	<name>ASL Player</name>
+	<description>A sign language video player that embeds into the corner of your screen, allowing for simultaneous playback with another video.</description>
+	<license>MIT</license>
+	<keywords>asl,lsq,video,player,accessibility,sign,language</keywords>
 
-    <js-module src="www/aslplayer.js" name="ASLPlayer">
-        <clobbers target="ASLPlayer" />
-    </js-module>
+	<platform name="ios">
+		<js-module src="www/aslplayer.js" name="ASLPlayer">
+			<clobbers target="window.ASLPlayer" />
+		</js-module>
+		<config-file target="config.xml" parent="/*">
+			<feature name="ASLPlayer">
+				<param name="ios-package" value="ASLPlayer" />
+				<param name="onload" value="true" />
+			</feature>
+		</config-file>
 
-    <platform name="ios">
-        <config-file target="config.xml" parent="/*">
-            <feature name="ASLPlayer">
-                <param name="ios-package" value="ASLPlayer"/>
-            </feature>
-        </config-file>
+		<header-file src="src/ios/ASLPlayer.h" />
+		<source-file src="src/ios/ASLPlayer.m" />
+		<header-file src="src/ios/ASLPlayerViewController.h" />
+		<source-file src="src/ios/ASLPlayerViewController.m" />
+		
+		<framework src="AVFoundation.framework" />
+	</platform>
 
-        <header-file src="src/ios/ASLPlayer.h" />
-        <source-file src="src/ios/ASLPlayer.m" />
-        <header-file src="src/ios/ASLPlayerViewController.h" />
-        <source-file src="src/ios/ASLPlayerViewController.m" />
-        
-        <framework src="AVFoundation.framework" />
-    </platform>
+	<platform name="browser">
+		<js-module src="src/browser/aslplayer.js" name="ASLPlayer">
+			<clobbers target="window.ASLPlayer" />
+		</js-module>
 
-    <platform name="browser">
-        <config-file target="config.xml" parent="/*">
-            <feature name="ASLPlayer">
-                <param name="browser-package" value="ASLPlayer"/>
-            </feature>
-        </config-file>
-
-    	<js-module src="src/browser/aslplayer.js" name="ASLPlayer">
-    		<clobbers target="ASLPlayer" />
-    	</js-module>
-    </platform>
+		<config-file target="config.xml" parent="/*">
+			<feature name="ASLPlayer">
+				<param name="browser-package" value="ASLPlayer" />
+				<param name="onload" value="true" />
+			</feature>
+		</config-file>
+	</platform>
 </plugin>
