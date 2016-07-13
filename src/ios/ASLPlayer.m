@@ -74,7 +74,7 @@
 - (void)seek:(CDVInvokedUrlCommand*)command {
 	CDVPluginResult* pluginResult = nil;
 	float seconds = [[command.arguments objectAtIndex:0] floatValue];
-	CMTime time = CMTimeMakeWithSeconds(seconds, 600);
+	CMTime time = CMTimeMakeWithSeconds(seconds, 60000);
 	
 	NSLog(@"ASLPlayer.seek(%f)", seconds);
 	
