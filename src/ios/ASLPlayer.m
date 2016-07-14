@@ -27,7 +27,7 @@
 	
 	CGFloat bottom = CGRectGetMaxY(self.viewController.view.frame);
 	CGFloat right = CGRectGetMaxX(self.viewController.view.frame);
-	CGRect frame = CGRectMake(right - 220, bottom - 235, 220, 235);
+	CGRect frame = CGRectMake(right - 235, bottom - 250, 220, 235); // added 15px border
 	self.controller.view.frame = frame;
 	
 	[self.controller.view setHidden:NO];
