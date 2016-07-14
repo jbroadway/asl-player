@@ -78,7 +78,7 @@ static void *ASLPlayerPlaybackViewControllerStatusObservationContext = &ASLPlaye
  * Seeks to the specified seek time of the currently loaded AVPlayer video.
  */
 - (void)seekToTime:(CMTime)time {
-	NSLog(@"ASLPlayerViewController.seekToDate(%f)", CMTimeGetSeconds(time));
+	NSLog(@"ASLPlayerViewController.seekToTime(%f)", CMTimeGetSeconds(time));
 	
 	[self.player seekToTime: time];
 }
