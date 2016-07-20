@@ -90,6 +90,8 @@ static void *ASLPlayerPlaybackViewControllerStatusObservationContext = &ASLPlaye
 	NSLog(@"ASLPlayerViewController.remove()");
 	
 	self.player = nil;
+	
+	[self.playerLayer removeFromSuperlayer];
 }
 
 @end
